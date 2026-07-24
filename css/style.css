@@ -265,22 +265,31 @@ hr.divider {
 }
 
 /* ---- Retreat ---- */
+.retreat-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 3rem auto 0;
+  text-align: left;
+}
+
+.retreat-col p + p {
+  margin-top: 1.25rem;
+}
+
 .includes-title {
   font-family: var(--font-heading);
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 
 .checklist {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 260px));
-  justify-content: center;
-  gap: 0.75rem 3rem;
-  max-width: 640px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   text-align: left;
 }
 
@@ -301,15 +310,6 @@ hr.divider {
   max-width: 480px;
   margin: 3rem auto 0;
   border-radius: 4px;
-}
-
-.waitlist-line {
-  margin-top: 3rem;
-  font-size: 1.05rem;
-}
-
-.waitlist-line a {
-  text-decoration: underline;
 }
 
 /* ---- About ---- */
@@ -450,14 +450,14 @@ hr.divider {
   .about-photo {
     order: -1;
   }
+
+  .retreat-columns {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 }
 
 @media (max-width: 600px) {
-  .checklist {
-    grid-template-columns: 1fr;
-    max-width: 280px;
-  }
-
   .mosaic {
     columns: 2 160px;
   }
@@ -474,10 +474,6 @@ hr.divider {
 
   .section {
     padding: 4rem 1.25rem;
-  }
-
-  .waitlist-card {
-    padding: 2rem 1.5rem;
   }
 
   .btn-row {
