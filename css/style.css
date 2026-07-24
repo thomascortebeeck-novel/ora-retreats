@@ -137,9 +137,18 @@ hr.divider {
   letter-spacing: 0.05em;
 }
 
+.logo img {
+  height: 28px;
+  width: auto;
+}
+
 .logo-large {
   font-size: clamp(3rem, 10vw, 5rem);
   color: #fff;
+}
+
+.page-intro {
+  padding-top: 3rem;
 }
 
 .nav-links {
@@ -294,28 +303,13 @@ hr.divider {
   border-radius: 4px;
 }
 
-.moodboard-link {
-  margin-top: 2rem;
-  font-family: var(--font-heading);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+.waitlist-line {
+  margin-top: 3rem;
+  font-size: 1.05rem;
+}
+
+.waitlist-line a {
   text-decoration: underline;
-}
-
-.waitlist-card {
-  margin: 4rem auto 0;
-  max-width: 480px;
-  background: var(--color-card);
-  padding: 3rem 2rem;
-  border-radius: 8px;
-}
-
-.waitlist-card p {
-  margin-bottom: 0.75rem;
-}
-
-.waitlist-card .btn {
-  margin-top: 1rem;
 }
 
 /* ---- About ---- */
