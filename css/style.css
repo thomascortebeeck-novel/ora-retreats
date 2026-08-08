@@ -333,6 +333,10 @@ hr.divider {
   margin-top: 4rem;
 }
 
+.mt-xl {
+  margin-top: 7rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -473,7 +477,8 @@ hr.divider {
 /* ---- About ---- */
 .about-intro {
   max-width: 560px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-intro p + p {
@@ -484,7 +489,7 @@ hr.divider {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
   margin-top: 4rem;
   text-align: left;
 }
@@ -508,6 +513,52 @@ hr.divider {
 
 .about-photo img {
   border-radius: 4px;
+}
+
+/* ---- Legal pages ---- */
+.legal-content {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.legal-content h2 {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content h3 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-content p {
+  margin-bottom: 1rem;
+}
+
+.legal-content ul {
+  list-style: disc;
+  margin: 0 0 1rem 1.5rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-content a {
+  text-decoration: underline;
+}
+
+.legal-updated {
+  color: var(--color-accent);
+  font-style: italic;
+  margin-top: 2rem;
 }
 
 /* ---- Contact ---- */
