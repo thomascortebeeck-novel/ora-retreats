@@ -103,10 +103,6 @@ hr.divider {
   color: var(--color-bg);
 }
 
-.btn-square {
-  border-radius: 2px;
-}
-
 .btn-row {
   display: flex;
   gap: 1rem;
@@ -193,9 +189,10 @@ hr.divider {
 /* ---- Hero ---- */
 .hero {
   position: relative;
-  aspect-ratio: 4 / 3;
-  max-height: 85vh;
-  min-height: 480px;
+  width: 100%;
+  height: 78vh;
+  max-height: 760px;
+  min-height: 520px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -278,12 +275,7 @@ hr.divider {
   font-size: 1.05rem;
 }
 
-/* ---- Definition block (home page, below hero) ---- */
-.definition {
-  padding: var(--section-padding);
-  text-align: center;
-}
-
+/* ---- Definition title (hero "ora (noun) —" heading) ---- */
 .definition-title {
   font-family: var(--font-logo);
   font-style: italic;
@@ -293,14 +285,10 @@ hr.divider {
   margin-bottom: 1.5rem;
 }
 
-.definition-inner {
-  max-width: 640px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-}
-
-.definition-inner p + p {
-  margin-top: 1.25rem;
+.definition-title-hero {
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  margin-bottom: 1rem;
 }
 
 /* ---- Retreat intro (dolce far niente) ---- */
@@ -641,8 +629,9 @@ hr.divider {
 
 @media (max-width: 480px) {
   .hero {
-    aspect-ratio: 3 / 4;
-    max-height: 90vh;
+    height: 85vh;
+    max-height: 640px;
+    min-height: 460px;
   }
 
   .section-title {
