@@ -38,7 +38,7 @@ ul {
 
   --font-logo: 'Cormorant Garamond', serif;
   --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Jost', sans-serif;
+  --font-body: 'Cormorant Garamond', serif;
 
   --max-width: 1100px;
   --section-padding: 6rem 1.5rem;
@@ -49,7 +49,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .container {
@@ -59,10 +59,9 @@ body {
 }
 
 .eyebrow {
-  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--color-accent);
   display: block;
   margin-bottom: 1rem;
@@ -70,10 +69,9 @@ body {
 }
 
 .section-title {
-  font-family: var(--font-heading);
   text-transform: lowercase;
-  letter-spacing: 0.05em;
-  font-size: 1.75rem;
+  letter-spacing: 0.02em;
+  font-size: 2.25rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 2rem;
@@ -89,10 +87,9 @@ hr.divider {
 
 .btn {
   display: inline-block;
-  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   padding: 0.9rem 2rem;
   border: 1px solid var(--color-text);
   border-radius: 999px;
@@ -104,6 +101,10 @@ hr.divider {
 .btn:hover {
   background: var(--color-text);
   color: var(--color-bg);
+}
+
+.btn-square {
+  border-radius: 2px;
 }
 
 .btn-row {
@@ -127,7 +128,7 @@ hr.divider {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 2.5rem;
   position: relative;
 }
 
@@ -138,13 +139,18 @@ hr.divider {
 }
 
 .logo img {
-  height: 28px;
+  height: 46px;
   width: auto;
 }
 
 .logo-large {
-  font-size: clamp(3rem, 10vw, 5rem);
+  font-family: var(--font-logo);
+  font-style: italic;
+  text-transform: lowercase;
+  font-size: clamp(3.5rem, 11vw, 6.5rem);
+  font-weight: 500;
   color: #fff;
+  line-height: 1;
 }
 
 .page-intro {
@@ -164,6 +170,7 @@ hr.divider {
 .btn-small {
   padding: 0.6rem 1.25rem;
   font-size: 0.7rem;
+  font-family: var(--font-heading);
 }
 
 /* ---- Mobile nav toggle ---- */
@@ -186,12 +193,13 @@ hr.divider {
 /* ---- Hero ---- */
 .hero {
   position: relative;
-  height: 90vh;
-  min-height: 500px;
+  aspect-ratio: 4 / 3;
+  max-height: 85vh;
+  min-height: 480px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
   overflow: hidden;
 }
 
@@ -201,29 +209,35 @@ hr.divider {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.45) 0%, rgba(30, 30, 30, 0.05) 45%, rgba(30, 30, 30, 0.05) 100%);
+  pointer-events: none;
 }
 
 .hero-overlay {
   position: relative;
   z-index: 1;
   color: #fff;
-  padding: 2rem;
-  max-width: 700px;
-}
-
-.hero-overlay::before {
-  content: "";
-  position: absolute;
-  inset: -2rem;
-  background: rgba(57, 57, 57, 0.35);
-  z-index: -1;
-  border-radius: 8px;
+  padding-top: 4rem;
+  max-width: 620px;
+  width: 100%;
 }
 
 .hero-tagline {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-top: 1rem;
   line-height: 1.6;
+  max-width: 480px;
+}
+
+.hero-overlay .btn-row {
+  justify-content: flex-start;
 }
 
 .btn-light {
@@ -264,6 +278,77 @@ hr.divider {
   font-size: 1.05rem;
 }
 
+/* ---- Definition block (home page, below hero) ---- */
+.definition {
+  padding: var(--section-padding);
+  text-align: center;
+}
+
+.definition-title {
+  font-family: var(--font-logo);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.definition-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.definition-inner p + p {
+  margin-top: 1.25rem;
+}
+
+/* ---- Retreat intro (dolce far niente) ---- */
+.retreat-intro-title {
+  font-family: var(--font-logo);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.retreat-intro-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+}
+
+.retreat-note {
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+.retreat-date {
+  font-weight: 600;
+}
+
+.todo-note {
+  font-style: italic;
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+.subtitle-italic {
+  font-style: italic;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.mt-lg {
+  margin-top: 4rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
 /* ---- Retreat ---- */
 .retreat-columns {
   display: grid;
@@ -279,10 +364,9 @@ hr.divider {
 }
 
 .includes-title {
-  font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   margin-bottom: 1.5rem;
 }
 
@@ -302,6 +386,92 @@ hr.divider {
   content: "—";
   position: absolute;
   left: 0;
+  color: var(--color-accent);
+}
+
+.checklist-sub {
+  list-style: disc;
+  margin: 0.5rem 0 0 1.25rem;
+  font-size: 0.95rem;
+}
+
+.checklist-sub li {
+  padding-left: 0;
+}
+
+.checklist-sub li::before {
+  content: none;
+}
+
+/* ---- Included / itinerary layout ---- */
+.included-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3.5rem;
+  max-width: 950px;
+  margin: 3rem auto 0;
+  text-align: left;
+}
+
+.included-block h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.included-block + .included-block {
+  margin-top: 2.5rem;
+}
+
+.itinerary {
+  background: var(--color-card);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+}
+
+.itinerary h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.itinerary-group + .itinerary-group {
+  margin-top: 1.5rem;
+}
+
+.itinerary-group h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+
+.itinerary-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.itinerary-time {
+  flex: 0 0 3.5rem;
+  color: var(--color-accent);
+}
+
+.itinerary-detail small {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.itinerary-caption {
+  font-style: italic;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 1.5rem;
   color: var(--color-accent);
 }
 
@@ -331,11 +501,10 @@ hr.divider {
   text-align: left;
 }
 
-.about-story h3 {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
+.about-story h2 {
+  font-size: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
 }
 
 .about-story-subtitle {
@@ -359,9 +528,8 @@ hr.divider {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  font-family: var(--font-heading);
-  font-size: 0.95rem;
-  letter-spacing: 0.03em;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
 }
 
 .contact-links a {
@@ -385,8 +553,7 @@ hr.divider {
 .footer-links {
   display: flex;
   gap: 1.5rem;
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -423,6 +590,10 @@ hr.divider {
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
+  .header-inner {
+    padding: 1.25rem 1.5rem;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
@@ -455,6 +626,11 @@ hr.divider {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  .included-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -465,7 +641,8 @@ hr.divider {
 
 @media (max-width: 480px) {
   .hero {
-    height: 100vh;
+    aspect-ratio: 3 / 4;
+    max-height: 90vh;
   }
 
   .section-title {
