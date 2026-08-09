@@ -1,4 +1,2 @@
 User-agent: *
-Allow: /
-
-Sitemap: https://ora-retreats.com/sitemap.xml
+Disallow: /
