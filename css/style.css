@@ -69,11 +69,18 @@ body {
 }
 
 .section-title {
-  text-transform: lowercase;
   letter-spacing: 0.02em;
   font-size: 2.25rem;
   font-weight: 500;
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--color-accent);
   margin-bottom: 2rem;
 }
 
@@ -87,6 +94,7 @@ hr.divider {
 
 .btn {
   display: inline-block;
+  font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.8rem;
@@ -190,15 +198,14 @@ hr.divider {
 .hero {
   position: relative;
   width: 100%;
-  height: 78vh;
-  max-height: 760px;
+  height: calc(100vh - 86px);
   min-height: 520px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
-  padding-left: clamp(1.5rem, 6vw, 6rem);
+  padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
@@ -208,14 +215,14 @@ hr.divider {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 35%;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(30, 30, 30, 0.45) 0%, rgba(30, 30, 30, 0.05) 45%, rgba(30, 30, 30, 0.05) 100%);
+  background: rgba(30, 30, 30, 0.3);
   pointer-events: none;
 }
 
@@ -223,7 +230,6 @@ hr.divider {
   position: relative;
   z-index: 1;
   color: #fff;
-  padding-top: 4rem;
   max-width: 620px;
   width: 100%;
 }
@@ -233,10 +239,8 @@ hr.divider {
   margin-top: 1rem;
   line-height: 1.6;
   max-width: 480px;
-}
-
-.hero-overlay .btn-row {
-  justify-content: flex-start;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-light {
@@ -282,14 +286,13 @@ hr.divider {
   font-family: var(--font-logo);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: 2.25rem;
   line-height: 1.1;
   margin-bottom: 1.5rem;
 }
 
 .definition-title-hero {
   color: #fff;
-  font-size: clamp(2rem, 5vw, 3.25rem);
   margin-bottom: 1rem;
 }
 
@@ -298,25 +301,29 @@ hr.divider {
   font-family: var(--font-logo);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: 2.25rem;
   line-height: 1.1;
   margin-bottom: 0.5rem;
 }
 
 .retreat-intro-subtitle {
-  font-size: 1.1rem;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
   color: var(--color-accent);
   margin-bottom: 2rem;
 }
 
 .retreat-note {
-  font-style: italic;
-  font-size: 1.3rem;
+  font-weight: 600;
   margin-top: 2rem;
 }
 
 .retreat-date {
+  font-style: italic;
   font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.4;
 }
 
 .todo-note {
@@ -327,8 +334,25 @@ hr.divider {
 
 .subtitle-italic {
   font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
   color: var(--color-accent);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 950px;
+  margin: 3rem auto 0;
+}
+
+.photo-row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .mt-lg {
@@ -384,17 +408,20 @@ hr.divider {
 }
 
 .checklist-sub {
-  list-style: disc;
-  margin: 0.5rem 0 0 1.25rem;
+  list-style: none;
+  margin: 0.5rem 0 0 0.25rem;
   font-size: 0.95rem;
 }
 
 .checklist-sub li {
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 .checklist-sub li::before {
-  content: none;
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
 }
 
 /* ---- Included / itinerary layout ---- */
@@ -470,7 +497,9 @@ hr.divider {
 
 .about-story-subtitle {
   font-family: var(--font-logo);
+  font-style: italic;
   font-size: 1.5rem;
+  line-height: 1.4;
   color: var(--color-accent);
   margin: 0.5rem 0 1.5rem;
 }
@@ -557,6 +586,11 @@ hr.divider {
   text-align: center;
 }
 
+.footer-inner .logo {
+  display: flex;
+  justify-content: center;
+}
+
 .footer-links {
   display: flex;
   gap: 1.5rem;
@@ -631,12 +665,25 @@ hr.divider {
 
   .retreat-columns {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.25rem;
   }
 
   .included-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .mt-xl {
+    margin-top: 3rem;
+  }
+
+  .mt-lg {
+    margin-top: 2.5rem;
+  }
+
+  .about-columns {
+    margin-top: 2rem;
+    gap: 2rem;
   }
 }
 
@@ -644,12 +691,14 @@ hr.divider {
   .mosaic {
     columns: 2 160px;
   }
+
+  .photo-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
   .hero {
-    height: 85vh;
-    max-height: 640px;
     min-height: 460px;
   }
 
